@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorlu Lakshmi Murali Manohar's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-950 text-slate-300;
+        }
+        .container {
+            @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+        }
+        .section-header {
+            @apply text-4xl sm:text-5xl font-bold text-white text-center mb-12;
+        }
+        .project-card {
+            @apply relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 transform hover:scale-105;
+        }
+        .project-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(163, 230, 53, 0.4) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        .animate-slide-in {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideIn 1s ease-out forwards;
+        }
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-950 sticky top-0 z-50 shadow-md">
+        <div class="container flex justify-between items-center py-4">
+            <a href="#" class="text-2xl font-bold text-lime-400 rounded-lg transition-colors hover:text-lime-300">Gorlu Lakshmi Murali Manohar</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-slate-400 hover:text-lime-400 transition-colors">About</a>
+                <a href="#projects" class="text-slate-400 hover:text-lime-400 transition-colors">Projects</a>
+                <a href="#contact" class="text-slate-400 hover:text-lime-400 transition-colors">Contact</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden p-2 text-slate-400 hover:text-lime-400 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950 shadow-lg py-2">
+            <a href="#about" class="block py-2 px-6 text-slate-400 hover:text-lime-400 hover:bg-gray-900 transition-colors">About</a>
+            <a href="#projects" class="block py-2 px-6 text-slate-400 hover:text-lime-400 hover:bg-gray-900 transition-colors">Projects</a>
+            <a href="#contact" class="block py-2 px-6 text-slate-400 hover:text-lime-400 hover:bg-gray-900 transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-24 md:py-32 bg-gray-950">
+        <div class="container text-center animate-slide-in">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4">
+                Hi, I'm <span class="text-lime-400">Gorlu Lakshmi Murali Manohar</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-400 mb-8 max-w-3xl mx-auto">
+                A passionate computer science student with a focus on creating impactful projects.
+            </p>
+            <div class="space-x-4">
+                <a href="#projects" class="inline-block bg-lime-500 text-gray-950 font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-lime-400 transition-colors">View My Work</a>
+                <a href="#contact" class="inline-block bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg border border-gray-700 shadow-lg hover:bg-gray-700 transition-colors">Get In Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-900">
+        <div class="container animate-fade-in-up">
+            <h2 class="section-header text-4xl sm:text-5xl">About Me</h2>
+            <p class="text-lg text-slate-400 text-center max-w-3xl mx-auto leading-relaxed">
+                I'm a passionate and driven computer science student with a strong foundation in a variety of programming languages and technologies. My goal is to use my skills to build impactful, user-focused projects. I thrive on problem-solving and collaboration, constantly seeking opportunities to learn and grow as a developer. My core skills include **Python**, **Java**, **HTML**, **CSS**, **MySQL**, and **MongoDB**.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-gray-950">
+        <div class="container animate-fade-in-up">
+            <h2 class="section-header">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <a href="https://github.com/Murali%20Manohar%2076" target="_blank" class="project-card bg-gray-800">
+                    <div class="w-full h-48 bg-cover bg-center rounded-t-xl" style="background-image: url('https://placehold.co/600x400/84cc16/166534?text=Personal+Portfolio');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Personal Portfolio</h3>
+                        <p class="text-slate-400 mb-4">Created a personal portfolio website using **HTML**, **CSS**, and minimal **JavaScript** to showcase projects and skills with a clean and responsive design.</p>
+                        <span class="text-lime-400 font-medium transition-colors">
+                            View on GitHub &rarr;
+                        </span>
+                    </div>
+                </a>
+                <!-- Project Card 2 -->
+                <a href="https://github.com/Murali%20Manohar%2076" target="_blank" class="project-card bg-gray-800">
+                    <div class="w-full h-48 bg-cover bg-center rounded-t-xl" style="background-image: url('https://placehold.co/600x400/9333ea/c084fc?text=FeedTrack');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">FeedTrack</h3>
+                        <p class="text-slate-400 mb-4">Built a feedback management system using **Python** and **MySQL** to collect, store, and analyze user feedback for actionable insights.</p>
+                        <span class="text-lime-400 font-medium transition-colors">
+                            View on GitHub &rarr;
+                        </span>
+                    </div>
+                </a>
+                <!-- Project Card 3 -->
+                <a href="https://github.com/Murali%20Manohar%2076" target="_blank" class="project-card bg-gray-800">
+                    <div class="w-full h-48 bg-cover bg-center rounded-t-xl" style="background-image: url('https://placehold.co/600x400/f87171/dc2626?text=Expense+Tracker');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Personal Expense Tracker</h3>
+                        <p class="text-slate-400 mb-4">Developed a **Java**-based personal expense tracker that stores expenses in text files, allowing categorized expense management and total cost calculation.</p>
+                        <span class="text-lime-400 font-medium transition-colors">
+                            View on GitHub &rarr;
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-900">
+        <div class="container animate-fade-in-up">
+            <h2 class="text-4xl sm:text-5xl font-bold text-lime-400 text-center mb-12">Get In Touch</h2>
+            <div class="bg-gray-800 rounded-xl shadow-lg p-8 max-w-2xl mx-auto text-center border border-gray-700">
+                <p class="text-slate-400 text-lg mb-6">
+                    Feel free to reach out to me for professional inquiries or collaborations. You can find me on these platforms:
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <!-- Email -->
+                    <a href="mailto:muralimanohar379@gmail.com" class="flex items-center space-x-2 text-lime-400 hover:text-lime-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13h-4a2 2 0 01-2-2V7a2 2 0 012-2h4m-4 13h10a2 2 0 002-2V7a2 2 0 00-2-2H9a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span class="font-medium">muralimanohar379@gmail.com</span>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/MuraliManohar" target="_blank" class="flex items-center space-x-2 text-lime-400 hover:text-lime-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.23 0H1.77C.79 0 0 .79 0 1.77v20.46c0 .98.79 1.77 1.77 1.77h20.46c.98 0 1.77-.79 1.77-1.77V1.77c0-.98-.79-1.77-1.77-1.77zM7.18 20.35H3.69V8.4h3.49v11.95zM5.44 6.94a1.88 1.88 0 11.01-3.76 1.88 1.88 0 01-.01 3.76zm15.18 13.41h-3.49v-5.59c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.44-2.14 2.94v5.69h-3.48V8.4h3.35v1.54h.05c.46-.88 1.59-1.81 3.29-1.81 3.52 0 4.17 2.32 4.17 5.34v6.88z"/>
+                        </svg>
+                        <span class="font-medium">MuraliManohar</span>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/Murali%20Manohar%2076" target="_blank" class="flex items-center space-x-2 text-lime-400 hover:text-lime-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.77.418-1.305.762-1.605-2.665-.304-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.197-6.095 8.197-11.389 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span class="font-medium">Murali Manohar 76</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-6">
+        <div class="container text-center text-slate-500 text-sm">
+            &copy; <span id="current-year"></span> Gorlu Lakshmi Murali Manohar. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('#mobile-menu a');
+            const currentYear = document.getElementById('current-year');
+
+            currentYear.textContent = new Date().getFullYear();
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Intersection Observer for fade-in effect
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const sections = document.querySelectorAll('section, header');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
